@@ -18,10 +18,10 @@ export class ErrorInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Method intercept()');
+    console.log('ErrorInterceptorService -> method intercept()');
 
     return next.handle(req).pipe(catchError(err => {
-      console.log('  err: ' + err);
+      console.log(err);
 
       if (err.status === 401) {
         this.tokenService.logOut();

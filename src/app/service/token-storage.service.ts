@@ -34,9 +34,8 @@ export class TokenStorageService {
 
   // Взять юзера
   public getUser(): any {
-    console.log('Method getUser()');
     const user = JSON.parse(sessionStorage.getItem(USER_KEY));
-    console.log('  user: ' + user);
+    console.log(user);
     return user;
   }
 

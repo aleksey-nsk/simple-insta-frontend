@@ -90,3 +90,23 @@ ng generate service helper/error-interceptor --skip-tests
 Далее сервис авторизации и интерсептор ошибок
 
 Последний сервис, который надо создать, это AuthGuardService
+
+7. Компоненты
+
+"Одним из ключевых элементов приложения являются компоненты. Компонент управляет 
+отображением представления на экране."
+
+Нужны 2 компонента: Регистрация и Логин
+Создадим папку src/app/auth и в ней создадим наши 2 компонента:
+
+ng generate component auth/register --skip-tests
+ng generate component auth/login --skip-tests
+
+Для проверки запустим сервер командой:
+ng serve
+и затем открываем в браузере http://localhost:4200/
+
+Далее можем открыть
+http://localhost:4200/register
+http://localhost:4200/login
+
