@@ -34,4 +34,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ------------------------
 
-
+2. Создадим модели для нашего приложения. У нас будет 3 модели: User, Post и Comment
