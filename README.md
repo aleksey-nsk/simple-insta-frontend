@@ -110,3 +110,7 @@ ng serve
 http://localhost:4200/register
 http://localhost:4200/login
 
+Далее создадим компоненты, определяющие куда юзер будет попадать после успешной аутентификации.
+Сначала создадим компонент навигации:
+ng generate component layout/navigation --skip-tests
+

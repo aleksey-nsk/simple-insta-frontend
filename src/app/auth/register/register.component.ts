@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(): void {
-    console.log('RegisterComponent -> Method submit()');
+    console.log('RegisterComponent -> method submit()');
     console.log(this.registerForm.value);
 
     this.authService.register({
