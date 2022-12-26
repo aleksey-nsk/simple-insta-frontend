@@ -4,6 +4,9 @@ import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {IndexComponent} from './layout/index/index.component';
 import {AuthGuardService} from './helper/auth-guard.service';
+import {ProfileComponent} from './user/profile/profile.component';
+import {UserPostsComponent} from './user/user-posts/user-posts.component';
+import {AddPostComponent} from './user/add-post/add-post.component';
 
 // Роут отвечает за то, что мы будем показывать, когда
 // пользователь будет заходить на тот или иной урл
@@ -11,6 +14,12 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'main', component: IndexComponent, canActivate: [AuthGuardService]},
+  {
+    path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService], children: [
+      {path: '', component: UserPostsComponent, canActivate: [AuthGuardService]},
+      {path: 'add', component: AddPostComponent, canActivate: [AuthGuardService]}
+    ]
+  },
   {path: '', redirectTo: 'main', pathMatch: 'full'}
 ];
 

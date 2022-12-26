@@ -118,3 +118,13 @@ ng generate component layout/navigation --skip-tests
 для всех пользователей:
 ng generate component layout/index --skip-tests
 
+Создадим страницу профиля пользователя: 
+- там мы будем добавлять новые посты для своего профиля,
+- также изменять данные юзера
+Создаём папку src/app/user и в ней уже создаём компоненты:
+ng generate component user/profile --skip-tests
+ng generate component user/user-posts --skip-tests
+ng generate component user/edit-user --skip-tests
+ng generate component user/add-post --skip-tests
+  
+
