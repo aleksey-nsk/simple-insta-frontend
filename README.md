@@ -114,3 +114,7 @@ http://localhost:4200/login
 Сначала создадим компонент навигации:
 ng generate component layout/navigation --skip-tests
 
+Главная страница приложения: теперь создадим компоненту которая будет показывать все посты
+для всех пользователей:
+ng generate component layout/index --skip-tests
+

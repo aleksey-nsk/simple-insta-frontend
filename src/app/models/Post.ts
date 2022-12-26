@@ -12,7 +12,7 @@ export interface Post {
 
   image?: File;
   likes?: number;
-  userLiked?: string[]; // юзеры которые лайкнули
+  usersLiked?: string[]; // юзеры которые лайкнули
   comments?: Comment[];
   username?: string;
 }
