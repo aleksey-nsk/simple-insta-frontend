@@ -7,7 +7,7 @@
 
 # Frontend
 
-1. Установить **пакетный менеджер NPM**  
+1. **Установить пакетный менеджер NPM**  
 
 Обновить указатель локальных пакетов:  
 `sudo apt update`  
@@ -18,11 +18,11 @@
 Убедиться что установка выполнена успешно, запросив у node номер версии:  
 `node --version` => v12.22.9
 
-Установить **npm** (диспетчер пакетов Node.js) с помощью apt:  
+Установить **npm (диспетчер пакетов Node.js)** с помощью apt:  
 `sudo apt install npm`  
 `npm --version` => 8.5.1  
 
-2. Компилятор **TypeScript**
+2. **Компилятор TypeScript**
 
 Установить компилятор TS с помощью команды менеджера пакетов npm:  
 `sudo npm install -g typescript`
@@ -33,7 +33,7 @@
 Проверить версию:  
 `tsc -v` => Version 4.9.4
 
-3. Пример **компиляции приложения на TypeScript**
+3. **Пример компиляции приложения на TypeScript**
 
 Создать каталог `example1`, и в нём создать файл `index.html` с содержимым:
 
@@ -50,9 +50,10 @@
     </html>
 
 Это обычный html-файл, в котором определён пустой заголовок - элемент `<h2>`  
-В него мы будем выводить некоторое содержимое. И также на веб-странице подключается файл `app.js`
+В него мы будем выводить некоторое содержимое.  
+И также на веб-странице подключается файл `app.js`
 
-Далее в том же каталоге создать файл `app.ts` (файл кода TypeScrypt) со следующим содержанием:  
+Далее в том же каталоге создать файл **app.ts (файл кода TypeScrypt)** со следующим содержимым:  
 
     class User {
         name: string;
@@ -66,10 +67,10 @@
     const header = this.document.getElementById("header");
     header.innerHTML = "Привет " + tom.name;
 
-В этом коде сначала определяется `класс User` - шаблон данных, которые будут использоваться на веб-странице.
-Этот класс имеет `поле name`, которое представляет `тип string`, то есть строку. Для передачи данных
-этому полю определен специальный метод - `constructor`, который принимает через `параметр _name`
-некоторую строку и передает её в `поле name`.
+В этом коде сначала определяется `класс User` - шаблон данных, которые будут использоваться на  
+веб-странице. Этот класс имеет `поле name`, которое представляет `тип string`, то есть строку. Для передачи
+данных этому полю определён специальный метод - `constructor`, который принимает через  
+`параметр _name` некоторую строку и передаёт её в `поле name`.
 
 Далее создаём `константу tom`, которая представляет этот класс.
 Затем получаем элемент с id `header` на веб-странице в одноименную константу `header`.
@@ -96,7 +97,7 @@
 
 Далее откроем веб-страницу `index.html` в браузере и увидим заголовок **Привет Том**
 
-4. Установка **Angular CLI**
+4. **Установка Angular CLI**
 
 Для компиляции приложения мы будем использовать инфрастуктуру **Angular CLI**.
 Angular CLI упрощает создание приложения, его компиляцию.
@@ -108,17 +109,21 @@ Angular CLI распространяется как пакет npm, поэтом
     # Установить версию Angular 10
     sudo npm install -g @angular/cli@10
 
-Данная команда установит `пакет @angular/cli` в качестве глобального модуля, поэтому в последующем 
+Данная команда установит `пакет @angular/cli` в качестве глобального модуля, поэтому в дальнейшем 
 при создании новых проектов Angular его не потребуется устанавливать заново.
 
 Проверить версию CLI можно командой:  
-`ng version` => Angular CLI: 10.2.1  
-                Node: 12.22.9  
-                OS: linux x64
+`ng version`  
+=> 
 
-5. Создадим наше фронтенд-приложение.
+    Angular CLI: 10.2.1  
+    Node: 12.22.9  
+    OS: linux x64
+
+5. **Создадим наше фронтенд-приложение**
    
-Открыть в терминале папку `simple_insta`. Ввести команду для создания проекта с именем "simple-insta-frontend":  
+Открыть в терминале папку `simple_insta`. Ввести команду для создания проекта  
+с именем "simple-insta-frontend":  
 `ng new simple-insta-frontend`
 
 `? Would you like to add Angular routing? (y/N)` => y  
@@ -130,7 +135,8 @@ Angular CLI распространяется как пакет npm, поэтом
     npm ERR! Found: jasmine-core@3.6.0
     npm ERR! peer jasmine-core@">=3.8" from karma-jasmine-html-reporter@1.7.0
 
-Как их исправить: открыть в проекте файл `package.json` -> раздел `devDependencies` -> поменять версии на:  
+Как их исправить: открыть в проекте файл `package.json` -> раздел `devDependencies` -> поменять  
+версии на:  
 
     "jasmine-core": "~3.8.0",
     "karma-jasmine-html-reporter": "^1.7.0"
@@ -146,15 +152,15 @@ https://material.angular.io/ -> Get started -> Install Angular Material:
 `? Set up browser animations for Angular Material? (Y/n)` => y  
 
 Далее добавляем CSS с сайта **Bootstrap** (для того чтобы можно было создавать layout):  
-https://getbootstrap.com/docs/5.0/getting-started/introduction/ ->  
-Copy-paste the stylesheet <link> into your <head> before all other stylesheets to load our CSS:  
+https://getbootstrap.com/docs/5.0/getting-started/introduction/ -> _Copy-paste the stylesheet `<link>` into
+your `<head>` before all other stylesheets to load our CSS_:  
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
 
-Открываем в проекте файл `src/index.html` и вставляем в список тегов link в самый конец.
+Открываем в проекте файл `src/index.html` и вставляем в _список тегов link_ в самый конец.
 
 Далее **запускаем сервер**:  
 `ng serve`  
@@ -173,99 +179,102 @@ Copy-paste the stylesheet <link> into your <head> before all other stylesheets t
 При этом в терминале видим, что **проект перекомпилировался**. В браузере на **localhost:4200** тоже всё
 обновилось само: теперь тут заголовок **Hello Angular**
 
-------------------------
+6. Сначала создадим **модели** для нашего приложения. У нас будет 3 модели: **User**, **Post** и **Comment**
 
-2. Создадим модели для нашего приложения. У нас будет 3 модели: User, Post и Comment
+7. Далее создадим **сервисы**, которые будут делать запросы на наш Backend
 
-3. Далее создадим сервисы, которые будут делать запросы на наш backend
+Создаём папку `src/app/service`. Далее генерируем сервисы используя CLI.  
+Сгенерим сервис для авторизации:  
+`ng generate service service/auth --skip-tests`
 
-Создаём папку src/app/service
-Далее генерируем сервисы используя CLI
+Затем остальные сервисы:  
+`ng generate service service/comment --skip-tests`  
+`ng generate service service/image --skip-tests`  
 
-Сгенерим сервис для авторизации:
-ng generate service service/auth --skip-tests
+Сервис нотификации:  
+`ng generate service service/notification --skip-tests`  
 
-Затем остальные сервисы:
-ng generate service service/comment --skip-tests
-ng generate service service/image --skip-tests
-
-Сервис нотификации:
-ng generate service service/notification --skip-tests
-
-Сервис который будет получать посты с сервера:
-ng generate service service/post --skip-tests
+Сервис который будет получать посты с сервера:  
+`ng generate service service/post --skip-tests`  
 
 Сервис который будет сохранять токен, получаемый от бэкенда
-(сохранять будет в локальной памяти браузера):
-ng generate service service/token-storage --skip-tests
-После чего мы будем использовать Interceptor который будет каждый раз
-подставлять этот токен с локальной памяти бруазера в http запрос
+(сохранять будет в локальной памяти браузера):  
+`ng generate service service/token-storage --skip-tests`  
+После чего мы будем использовать **Interceptor**, который будет каждый раз
+подставлять этот токен с локальной памяти бруазера в **http-запрос**
 
-Юзер сервис:
-ng generate service service/user --skip-tests
+Юзер сервис:  
+`ng generate service service/user --skip-tests`
 
-4. Далее создадим папку src/app/helper и в ней создадим сервисы:
-   
-ng generate service helper/auth-guard --skip-tests
-ng generate service helper/auth-interceptor --skip-tests
-ng generate service helper/error-interceptor --skip-tests
+Далее создадим папку `src/app/helper` и в ней создадим сервисы:     
+`ng generate service helper/auth-guard --skip-tests`  
+`ng generate service helper/auth-interceptor --skip-tests`  
+`ng generate service helper/error-interceptor --skip-tests`  
 
-5. Добавляем Angular Material для стиля приложения
+8. Добавляем **Angular Material** для стиля приложения.
 
-6. TokenStorage и Интерсепторы
+9. **TokenStorage и Интерсепторы**
 
-Начнём заниматься авторизацией пользователя.
+Сделаем авторизацию пользователя. Нам понадобится **сервис TokenStorageService**.
+Сохранять токен будем в браузере.
 
-Нам понадобится сервис TokenStorageService
-Сохранять токен будем в браузере
-
-Затем приступим к AuthInterceptorService: это именно тот сервис, который каждый раз
+Сервис AuthInterceptorService - это именно тот сервис, который каждый раз
 будет подставлять токен в запросы.
 
-Далее сервис с нотификациями: NotificationService
+10. Далее сервис с нотификациями: NotificationService.
 
-Далее сервис для загрузки картинок
+Сервис для загрузки картинок, сервис для комментариев, сервис авторизации и интерсептор ошибок.  
+Последний сервис, который надо создать, это AuthGuardService.
 
-Далее сервис для комментариев
+11. **Компоненты**
 
-Далее сервис авторизации и интерсептор ошибок
+_"Одним из ключевых элементов приложения являются компоненты. Компонент управляет 
+отображением представления на экране."_
 
-Последний сервис, который надо создать, это AuthGuardService
+Сначала нужны 2 компонента: **Регистрация** и **Логин**.  
+Создадим папку `src/app/auth` и в ней создадим наши 2 компонента:  
+`ng generate component auth/register --skip-tests`  
+`ng generate component auth/login --skip-tests`
 
-7. Компоненты
-
-"Одним из ключевых элементов приложения являются компоненты. Компонент управляет 
-отображением представления на экране."
-
-Нужны 2 компонента: Регистрация и Логин
-Создадим папку src/app/auth и в ней создадим наши 2 компонента:
-
-ng generate component auth/register --skip-tests
-ng generate component auth/login --skip-tests
-
-Для проверки запустим сервер командой:
-ng serve
+Для проверки запустим сервер командой:  
+`ng serve`  
 и затем открываем в браузере http://localhost:4200/
 
-Далее можем открыть
-http://localhost:4200/register
-http://localhost:4200/login
+Далее можем открыть:  
+http://localhost:4200/register  
+http://localhost:4200/login  
 
-Далее создадим компоненты, определяющие куда юзер будет попадать после успешной аутентификации.
-Сначала создадим компонент навигации:
-ng generate component layout/navigation --skip-tests
+Далее создадим компоненты, определяющие куда юзер будет попадать после успешной аутентификации.  
+Сначала создадим **компонент навигации**:  
+`ng generate component layout/navigation --skip-tests`
 
 Главная страница приложения: теперь создадим компоненту которая будет показывать все посты
-для всех пользователей:
-ng generate component layout/index --skip-tests
+для всех пользователей:  
+`ng generate component layout/index --skip-tests`
 
-Создадим страницу профиля пользователя: 
-- там мы будем добавлять новые посты для своего профиля,
-- также изменять данные юзера
-Создаём папку src/app/user и в ней уже создаём компоненты:
-ng generate component user/profile --skip-tests
-ng generate component user/user-posts --skip-tests
-ng generate component user/edit-user --skip-tests
-ng generate component user/add-post --skip-tests
+Создадим страницу профиля пользователя:  
+- там мы будем добавлять новые посты для своего профиля;  
+- а также изменять данные юзера.
+
+Создаём папку `src/app/user` и в ней уже создаём компоненты:  
+`ng generate component user/profile --skip-tests`  
+`ng generate component user/user-posts --skip-tests`  
+`ng generate component user/edit-user --skip-tests`  
+`ng generate component user/add-post --skip-tests`  
   
+12. В конце структура каталога `src/app` выглядит так:  
+    ![](screenshots/01_struc.png)
 
+13. Запущенное приложение в браузере выглядит так:  
+
+Страница регистрации:  
+![](screenshots/02_register.png)  
+
+Страница авторизации:  
+![](screenshots/03_login.png)  
+
+Главная страница со списком всех постов:  
+![](screenshots/04_main_page.png)  
+
+Профиль юзера:   
+![](screenshots/05_profile.png)  
