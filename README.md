@@ -201,7 +201,7 @@ your `<head>` before all other stylesheets to load our CSS_:
 (сохранять будет в локальной памяти браузера):  
 `ng generate service service/token-storage --skip-tests`  
 После чего мы будем использовать **Interceptor**, который будет каждый раз
-подставлять этот токен с локальной памяти бруазера в **http-запрос**
+подставлять этот токен с локальной памяти бруазера в **http-запрос**.
 
 Юзер сервис:  
 `ng generate service service/user --skip-tests`
@@ -211,7 +211,7 @@ your `<head>` before all other stylesheets to load our CSS_:
 `ng generate service helper/auth-interceptor --skip-tests`  
 `ng generate service helper/error-interceptor --skip-tests`  
 
-8. Добавляем **Angular Material** для стиля приложения.
+8. Добавляем **Angular Material** для стиля приложения
 
 9. **TokenStorage и Интерсепторы**
 
@@ -221,7 +221,7 @@ your `<head>` before all other stylesheets to load our CSS_:
 Сервис AuthInterceptorService - это именно тот сервис, который каждый раз
 будет подставлять токен в запросы.
 
-10. Далее сервис с нотификациями: NotificationService.
+10. Далее сервис с **нотификациями**: NotificationService
 
 Сервис для загрузки картинок, сервис для комментариев, сервис авторизации и интерсептор ошибок.  
 Последний сервис, который надо создать, это AuthGuardService.
@@ -267,14 +267,14 @@ http://localhost:4200/login
 
 13. Запущенное приложение в браузере выглядит так:  
 
-Страница регистрации:  
+**_Страница регистрации_**:  
 ![](screenshots/02_register.png)  
 
-Страница авторизации:  
+**_Страница авторизации_**:  
 ![](screenshots/03_login.png)  
 
-Главная страница со списком всех постов:  
+**_Главная страница со списком всех постов_**:  
 ![](screenshots/04_main_page.png)  
 
-Профиль юзера:   
+**_Профиль юзера_**:   
 ![](screenshots/05_profile.png)  
