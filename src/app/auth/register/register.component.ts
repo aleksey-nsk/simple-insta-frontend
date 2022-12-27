@@ -19,12 +19,11 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('RegisterComponent -> method ngOnInit()');
     this.registerForm = this.createRegisterForm();
   }
 
   createRegisterForm(): FormGroup {
-    console.log('Method createRegisterForm()');
+    console.log('Create Register Form');
 
     return this.fb.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
@@ -37,9 +36,6 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(): void {
-    console.log('RegisterComponent -> method submit()');
-    console.log(this.registerForm.value);
-
     this.authService.register({
       email: this.registerForm.value.email,
       username: this.registerForm.value.username,

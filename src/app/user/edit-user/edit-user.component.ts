@@ -26,7 +26,7 @@ export class EditUserComponent implements OnInit {
   }
 
   createProfileForm(): FormGroup {
-    console.log('EditUserComponent -> method createProfileForm()');
+    console.log('Create Profile Form');
     return this.fb.group({
       firstName: [
         this.data.user.firstname,
@@ -44,7 +44,6 @@ export class EditUserComponent implements OnInit {
   }
 
   submit(): void {
-    console.log('EditUserComponent -> method submit()');
     this.userService.updateUser(this.updateUser()).subscribe(() => {
       this.notificationService.showSnackBar('User updated successfully');
       this.dialogRef.close();
@@ -52,7 +51,6 @@ export class EditUserComponent implements OnInit {
   }
 
   private updateUser(): User {
-    console.log('EditUserComponent -> method updateUser()');
     this.data.user.firstname = this.profileEditForm.value.firstName;
     this.data.user.lastname = this.profileEditForm.value.lastName;
     this.data.user.bio = this.profileEditForm.value.bio;

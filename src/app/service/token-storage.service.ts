@@ -13,21 +13,19 @@ export class TokenStorageService {
 
   // Сохранить токен
   public saveToken(token: string): void {
-    console.log('Method saveToken(), token: ' + token);
+    console.log('Save Token: ' + token);
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
   public getToken(): string {
-    console.log('Method getToken()');
     const token = sessionStorage.getItem(TOKEN_KEY);
-    console.log('  token: ' + token);
     return token;
   }
 
   // Сохранить юзера
   public saveUser(user): void {
-    console.log('Method saveUser(), user: ' + user);
+    console.log('Save User');
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }

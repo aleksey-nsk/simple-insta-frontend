@@ -16,9 +16,8 @@ export class ImageService {
 
   // Загрузить фото для пользователя
   uploadImageToUser(file: File): Observable<any> {
-    console.log('Method uploadImageToUser()');
     const url = IMAGE_API + 'upload';
-    console.log('  url: ' + url);
+    console.log(url);
 
     const uploadData = new FormData();
     uploadData.append('file', file);
@@ -28,9 +27,8 @@ export class ImageService {
 
   // Загрузить фото для поста
   uploadImageToPost(file: File, postId: number): Observable<any> {
-    console.log('Method uploadImageToPost(), postId: ' + postId);
     const url = IMAGE_API + postId + '/upload';
-    console.log('  url: ' + url);
+    console.log(url);
 
     const uploadData = new FormData();
     uploadData.append('file', file);
@@ -40,18 +38,15 @@ export class ImageService {
 
   // Вернуть фото пользователя. Используем когда заходим в профиль
   getProfileImage(): Observable<any> {
-    console.log('Method getProfileImage()');
     const url = IMAGE_API + 'profileImage';
-    console.log('  url: ' + url);
+    console.log(url);
 
     return this.http.get(url);
   }
 
   // Взять фотографию для поста
   getImageToPost(postId: number): any {
-    console.log('Method getImageToPost()');
     const url = IMAGE_API + postId + '/image';
-    console.log('  url: ' + url);
 
     return this.http.get(url);
   }

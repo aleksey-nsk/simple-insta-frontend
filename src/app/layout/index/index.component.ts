@@ -29,8 +29,6 @@ export class IndexComponent implements OnInit {
 
   // Данный метод вызывается первым
   ngOnInit(): void {
-    console.log('IndexComponent -> method ngOnInit()');
-
     this.postService.getAllPosts().subscribe(data => {
       console.log(data);
       this.posts = data;
@@ -40,15 +38,12 @@ export class IndexComponent implements OnInit {
     });
 
     this.userService.getCurrentUser().subscribe(data => {
-      console.log(data);
       this.user = data;
       this.isUserDataLoaded = true;
     });
   }
 
   getImagesToPosts(posts: Post[]): void {
-    console.log('IndexComponent -> method getImagesToPosts()');
-
     posts.forEach(p => {
       this.imageService.getImageToPost(p.id)
         .subscribe(data => {
@@ -58,8 +53,6 @@ export class IndexComponent implements OnInit {
   }
 
   getCommentsToPosts(posts: Post[]): void {
-    console.log('IndexComponent -> method getCommentsToPosts()');
-
     posts.forEach(p => {
       this.commentService.getCommentsToPost(p.id).subscribe(data => {
         p.comments = data;
@@ -68,10 +61,7 @@ export class IndexComponent implements OnInit {
   }
 
   likePost(postId: number, postIndex: number): void {
-    console.log('IndexComponent -> method likePost()');
-
     const post = this.posts[postIndex];
-    console.log(post);
 
     if (!post.usersLiked.includes(this.user.username)) {
       this.postService.likePost(postId, this.user.username).subscribe(() => {
@@ -101,8 +91,6 @@ export class IndexComponent implements OnInit {
   }
 
   formatImage(img: any): any {
-    console.log('IndexComponent -> method formatImage()');
-
     if (img == null) {
       return null;
     }

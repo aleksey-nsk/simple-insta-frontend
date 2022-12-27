@@ -21,8 +21,6 @@ export class LoginComponent implements OnInit {
               private router: Router, // роутер будет переводить нас на другой урл при успешной авторизации
               private fb: FormBuilder) { // для создания формы
 
-    console.log('LoginComponent -> constructor()');
-
     // Если есть пользователь, то перевести
     // его на главную страницу
     if (this.tokenStorage.getUser()) {
@@ -34,13 +32,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('LoginComponent -> Method ngOnInit()');
     this.loginForm = this.createLoginForm();
   }
 
   // Метод для создания формы
   createLoginForm(): FormGroup {
-    console.log('Method createLoginForm()');
+    console.log('Create Login Form');
 
     return this.fb.group({
       username: ['', Validators.compose([Validators.required])],
@@ -50,13 +47,13 @@ export class LoginComponent implements OnInit {
 
   // Этот метод будет засылать данные на сервер
   submit(): void {
-    console.log('LoginComponent -> Method submit()');
+    console.log('Логинимся. Отправить данные на сервер');
 
     this.authService.login({
       username: this.loginForm.value.username,
       password: this.loginForm.value.password
     }).subscribe(data => {
-      console.log('  data: ' + data);
+      console.log(data);
 
       this.tokenStorage.saveToken(data.token);
       this.tokenStorage.saveUser(data);

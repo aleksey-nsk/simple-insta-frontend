@@ -30,8 +30,6 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('ProfileComponent -> method ngOnInit()');
-
     // Получить данные юзера
     this.userService.getCurrentUser().subscribe(data => {
       console.log(data);
@@ -41,13 +39,12 @@ export class ProfileComponent implements OnInit {
 
     // Возьмём фото профиля
     this.imageService.getProfileImage().subscribe(data => {
-      console.log(data);
       this.userProfileImage = data.imageBytes;
     });
   }
 
   onFileSelected(event): void {
-    console.log('ProfileComponent -> method onFileSelected()');
+    console.log('On File Selected');
     this.selectedFile = event.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(this.selectedFile);
@@ -57,7 +54,7 @@ export class ProfileComponent implements OnInit {
   }
 
   openEditDialog(): void {
-    console.log('ProfileComponent -> method openEditDialog()');
+    console.log('Open Edit Dialog');
     const dialogUserEditConfig = new MatDialogConfig();
     dialogUserEditConfig.width = '400px';
     dialogUserEditConfig.data = {
@@ -69,7 +66,6 @@ export class ProfileComponent implements OnInit {
   // Показать фото юзера.
   // Фото приходит в байтах и его надо трансформировать
   formatImage(img: any): any {
-    console.log('ProfileComponent -> method formatImage()');
     if (img == null) {
       return null;
     }
@@ -78,7 +74,6 @@ export class ProfileComponent implements OnInit {
 
   // Загрузить фото
   onUpload(): void {
-    console.log('ProfileComponent -> method onUpload()');
     if (this.selectedFile != null) {
       this.imageService.uploadImageToUser(this.selectedFile).subscribe(() => {
         this.notificationService.showSnackBar('Profile Image updated successfully');

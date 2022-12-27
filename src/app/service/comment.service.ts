@@ -25,18 +25,15 @@ export class CommentService {
 
   // Получить все комментарии к посту
   getCommentsToPost(postId: number): Observable<any> {
-    console.log('Method getCommentsToPost()');
     const url = COMMENT_API + postId + '/all';
-    console.log('  url: ' + url);
 
     return this.http.get(url);
   }
 
   // Удалить комментарий
   deleteComment(commentId: number): Observable<any> {
-    console.log('Method deleteComment()');
     const url = COMMENT_API + commentId + '/delete';
-    console.log('  url: ' + url);
+    console.log(url);
 
     return this.http.post(url, null);
   }

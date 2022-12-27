@@ -16,7 +16,6 @@ export class NotificationService {
 
   // Показать сообщение
   public showSnackBar(message: string): void {
-    console.log('Method showSnackBar(), message: ' + message);
     this.snackbar.open(message, null, {
       duration: 2000 // сообщение будет отображаться 2 секунды
     });

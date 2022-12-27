@@ -22,18 +22,17 @@ export class UserService {
 
   // Вернуть текущего авторизированного юзера
   getCurrentUser(): Observable<any> {
-    console.log('Method getCurrentUser()');
     const url = USER_API;
-    console.log('  url: ' + url);
+    console.log(url);
     return this.http.get(url);
   }
 
   // Обновить юзера
   updateUser(user: any): Observable<any> {
-    console.log('Method updateUser()');
-    console.log('  user: ' + user);
+    console.log('Update User');
+    console.log(user);
     const url = USER_API + 'update';
-    console.log('  url: ' + url);
+    console.log(url);
     return this.http.post(url, user);
   }
 }

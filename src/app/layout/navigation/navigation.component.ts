@@ -21,13 +21,10 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('NavigationComponent -> method ngOnInit()');
-
     this.isLoggedIn = !!this.tokenService.getToken();
 
     if (this.isLoggedIn) {
       this.userService.getCurrentUser().subscribe(data => {
-        console.log(data);
         this.user = data;
         this.isDataLoaded = true;
       });
@@ -35,7 +32,6 @@ export class NavigationComponent implements OnInit {
   }
 
   logout(): void {
-    console.log('NavigationComponent -> method logout()');
     this.tokenService.logOut();
     this.router.navigate(['/login']);
   }

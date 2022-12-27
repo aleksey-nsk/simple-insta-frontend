@@ -22,7 +22,6 @@ export class UserPostsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('UserPostsComponent -> method ngOnInit()');
     this.postService.getPostsForCurrentUser().subscribe(data => {
       console.log(data);
       this.posts = data;
@@ -33,7 +32,6 @@ export class UserPostsComponent implements OnInit {
   }
 
   getImagesToPosts(posts: Post[]): void {
-    console.log('UserPostsComponent -> method getImagesToPosts()');
     posts.forEach(p => {
       this.imageService.getImageToPost(p.id).subscribe(data => {
         p.image = data.imageBytes;
@@ -42,7 +40,6 @@ export class UserPostsComponent implements OnInit {
   }
 
   getCommentsToPosts(posts: Post[]): void {
-    console.log('UserPostsComponent -> method getCommentsToPosts()');
     posts.forEach(p => {
       this.commentService.getCommentsToPost(p.id).subscribe(data => {
         p.comments = data;
@@ -51,7 +48,7 @@ export class UserPostsComponent implements OnInit {
   }
 
   removePost(post: Post, index: number): void {
-    console.log('UserPostsComponent -> method removePost()');
+    console.log('Remove Post');
     console.log(post);
 
     const result = confirm('Do you really want to delete this post?');
@@ -65,8 +62,6 @@ export class UserPostsComponent implements OnInit {
   }
 
   formatImage(img: any): any {
-    console.log('UserPostsComponent -> method formatImage()');
-
     if (img == null) {
       return null;
     }
@@ -75,8 +70,6 @@ export class UserPostsComponent implements OnInit {
   }
 
   deleteComment(commentId: number, postIndex: number, commentIndex: number): void {
-    console.log('UserPostsComponent -> method deleteComment()');
-
     const post = this.posts[postIndex];
 
     this.commentService.deleteComment(commentId).subscribe(() => {

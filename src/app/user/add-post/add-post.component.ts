@@ -27,12 +27,11 @@ export class AddPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('AddPostComponent -> method ngOnInit()');
     this.postForm = this.createPostForm();
   }
 
   createPostForm(): FormGroup {
-    console.log('AddPostComponent -> method createPostForm()');
+    console.log('Create Post Form');
     return this.fb.group({
       topic: ['', Validators.compose([Validators.required])],
       caption: ['', Validators.compose([Validators.required])],
@@ -41,8 +40,6 @@ export class AddPostComponent implements OnInit {
   }
 
   submit(): void {
-    console.log('AddPostComponent -> method submit()');
-
     this.postService.createPost({
       topic: this.postForm.value.topic,
       caption: this.postForm.value.caption,
@@ -62,8 +59,6 @@ export class AddPostComponent implements OnInit {
   }
 
   onFileSelected(event): void {
-    console.log('AddPostComponent -> method onFileSelected()');
-
     this.selectedFile = event.target.files[0];
 
     const reader = new FileReader();

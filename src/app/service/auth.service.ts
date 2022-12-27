@@ -16,11 +16,11 @@ export class AuthService {
 
   // Зарегистрироваться
   public register(user): Observable<any> {
-    console.log('AuthService -> method register()');
+    console.log('Register');
     console.log(user);
 
     const url = AUTH_API + 'signup';
-    console.log('url: ' + url);
+    console.log(url);
 
     return this.http.post(url, {
       email: user.email,
