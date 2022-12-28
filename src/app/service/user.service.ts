@@ -12,11 +12,10 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  // Брать юзера по id
+  // Получить юзера по id
   getUserById(id: number): Observable<any> {
-    console.log('Method getUserById()');
     const url = USER_API + id;
-    console.log('  url: ' + url);
+    console.log(url);
     return this.http.get(url);
   }
 
@@ -29,7 +28,6 @@ export class UserService {
 
   // Обновить юзера
   updateUser(user: any): Observable<any> {
-    console.log('Update User');
     console.log(user);
     const url = USER_API + 'update';
     console.log(url);

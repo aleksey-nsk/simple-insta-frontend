@@ -65,13 +65,11 @@ export class UserPostsComponent implements OnInit {
     if (img == null) {
       return null;
     }
-
     return 'data:image/jpeg;base64,' + img;
   }
 
   deleteComment(commentId: number, postIndex: number, commentIndex: number): void {
     const post = this.posts[postIndex];
-
     this.commentService.deleteComment(commentId).subscribe(() => {
       this.notificationService.showSnackBar('Comment removed');
       post.comments.splice(commentIndex, 1);

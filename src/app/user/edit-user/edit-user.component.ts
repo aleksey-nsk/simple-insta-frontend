@@ -58,7 +58,7 @@ export class EditUserComponent implements OnInit {
   }
 
   closeDialog(): void {
-    console.log('EditUserComponent -> method closeDialog()');
+    console.log('Close Dialog');
     this.dialogRef.close();
   }
 }

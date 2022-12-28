@@ -9,7 +9,7 @@ import {UserPostsComponent} from './user/user-posts/user-posts.component';
 import {AddPostComponent} from './user/add-post/add-post.component';
 
 // Роут отвечает за то, что мы будем показывать, когда
-// пользователь будет заходить на тот или иной урл
+// пользователь будет заходить на тот или иной url
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},

@@ -39,7 +39,7 @@ export class TokenStorageService {
 
   // Чтобы сделать log out надо очистить сессию
   public logOut(): void {
-    console.log('Method logOut()');
+    console.log('Log Out');
     window.sessionStorage.clear();
     window.location.reload();
   }

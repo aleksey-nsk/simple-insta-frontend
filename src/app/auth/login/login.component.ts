@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService,
               private tokenStorage: TokenStorageService,
               private notificationService: NotificationService,
-              private router: Router, // роутер будет переводить нас на другой урл при успешной авторизации
+              private router: Router, // роутер будет переводить нас на другой url при успешной авторизации
               private fb: FormBuilder) { // для создания формы
 
     // Если есть пользователь, то перевести
@@ -38,14 +38,13 @@ export class LoginComponent implements OnInit {
   // Метод для создания формы
   createLoginForm(): FormGroup {
     console.log('Create Login Form');
-
     return this.fb.group({
       username: ['', Validators.compose([Validators.required])],
       password: ['', Validators.compose([Validators.required])],
     });
   }
 
-  // Этот метод будет засылать данные на сервер
+  // Этот метод будет отправлять данные на сервер
   submit(): void {
     console.log('Логинимся. Отправить данные на сервер');
 

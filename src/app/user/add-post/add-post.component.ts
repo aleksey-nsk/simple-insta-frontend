@@ -63,6 +63,7 @@ export class AddPostComponent implements OnInit {
 
     const reader = new FileReader();
     reader.readAsDataURL(this.selectedFile);
+
     reader.onload = (e) => {
       this.previewImgURL = reader.result;
     };

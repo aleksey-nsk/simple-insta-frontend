@@ -12,21 +12,22 @@ export class CommentService {
   constructor(private http: HttpClient) {
   }
 
-  // Добавить комментарий посту
+  // Добавить комментарий к посту
   addCommentToPost(postId: number, message: string): Observable<any> {
-    console.log('Method addCommentToPost(), message: ' + message);
+    console.log('Add Comment To Post');
+    console.log(message);
+
     const url = COMMENT_API + postId + '/create';
-    console.log('  url: ' + url);
+    console.log(url);
 
     return this.http.post(url, {
       message
     });
   }
 
-  // Получить все комментарии к посту
+  // Получить все комментарии поста
   getCommentsToPost(postId: number): Observable<any> {
     const url = COMMENT_API + postId + '/all';
-
     return this.http.get(url);
   }
 
@@ -34,7 +35,6 @@ export class CommentService {
   deleteComment(commentId: number): Observable<any> {
     const url = COMMENT_API + commentId + '/delete';
     console.log(url);
-
     return this.http.post(url, null);
   }
 }

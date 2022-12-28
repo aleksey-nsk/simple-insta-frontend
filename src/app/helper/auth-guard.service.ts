@@ -3,8 +3,8 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTre
 import {Observable} from 'rxjs';
 import {TokenStorageService} from '../service/token-storage.service';
 
-// Сервис который будет проверять: имеются ли права у нашего пользователя
-// зайти на тот или иной url
+// Сервис, который будет проверять: имеются ли права
+// у нашего пользователя, зайти на тот или иной url
 
 @Injectable({
   providedIn: 'root'

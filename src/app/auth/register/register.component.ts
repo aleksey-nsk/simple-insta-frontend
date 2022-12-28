@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
 
   createRegisterForm(): FormGroup {
     console.log('Create Register Form');
-
     return this.fb.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       username: ['', Validators.compose([Validators.required])],

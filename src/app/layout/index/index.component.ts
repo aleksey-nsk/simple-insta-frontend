@@ -79,8 +79,6 @@ export class IndexComponent implements OnInit {
   }
 
   postComment(message: string, postId: number, postIndex: number): void {
-    console.log('IndexComponent -> method postComment()');
-
     const post = this.posts[postIndex];
     console.log(post);
 
@@ -94,7 +92,6 @@ export class IndexComponent implements OnInit {
     if (img == null) {
       return null;
     }
-
     return 'data:image/jpeg;base64,' + img;
   }
 }

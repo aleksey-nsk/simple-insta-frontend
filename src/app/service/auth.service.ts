@@ -4,8 +4,6 @@ import {Observable} from 'rxjs';
 
 const AUTH_API = 'http://localhost:8082/api/v1/auth/';
 
-// Сервис который будет авторизировать пользователя
-
 @Injectable({
   providedIn: 'root'
 })
@@ -34,9 +32,11 @@ export class AuthService {
 
   // Залогиниться
   public login(user): Observable<any> {
-    console.log('Method login(), user: ' + user);
+    console.log('Login');
+    console.log(user);
+
     const url = AUTH_API + 'signin';
-    console.log('  url: ' + url);
+    console.log(url);
 
     return this.http.post(url, {
       username: user.username,

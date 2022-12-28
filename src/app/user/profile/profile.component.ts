@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
       this.isUserDataLoaded = true;
     });
 
-    // Возьмём фото профиля
+    // Получить фото профиля
     this.imageService.getProfileImage().subscribe(data => {
       this.userProfileImage = data.imageBytes;
     });

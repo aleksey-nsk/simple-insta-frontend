@@ -20,8 +20,8 @@ export class PostService {
     return this.http.post(url, post);
   }
 
-  // Получим все посты, когда
-  // будем заходить на главную страницу
+  // Получаем все посты, когда
+  // заходим на главную страницу
   getAllPosts(): Observable<any> {
     const url = POST_API + 'all';
     console.log(url);

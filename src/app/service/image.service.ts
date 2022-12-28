@@ -4,8 +4,6 @@ import {Observable} from 'rxjs';
 
 const IMAGE_API = 'http://localhost:8082/api/v1/image/';
 
-// Сервис для загрузки картинок
-
 @Injectable({
   providedIn: 'root'
 })
@@ -40,14 +38,12 @@ export class ImageService {
   getProfileImage(): Observable<any> {
     const url = IMAGE_API + 'profileImage';
     console.log(url);
-
     return this.http.get(url);
   }
 
   // Взять фотографию для поста
   getImageToPost(postId: number): any {
     const url = IMAGE_API + postId + '/image';
-
     return this.http.get(url);
   }
 }

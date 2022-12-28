@@ -5,8 +5,7 @@ import {NotificationService} from '../service/notification.service';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
-// Если вернётся ошибка.
-// Например: токен протух
+// Данный сервис поможет, если вернётся ошибка (например токен протух)
 
 @Injectable({
   providedIn: 'root'
