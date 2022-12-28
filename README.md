@@ -152,15 +152,15 @@ https://material.angular.io/ -> Get started -> Install Angular Material:
 `? Set up browser animations for Angular Material? (Y/n)` => y  
 
 Далее добавляем CSS с сайта **Bootstrap** (для того чтобы можно было создавать layout):  
-https://getbootstrap.com/docs/5.0/getting-started/introduction/ -> _Copy-paste the stylesheet `<link>` into
-your `<head>` before all other stylesheets to load our CSS_:  
+https://getbootstrap.com/docs/5.0/getting-started/introduction/ -> _"Copy-paste the stylesheet `<link>` into
+your `<head>` before all other stylesheets to load our CSS"_:  
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
 
-Открываем в проекте файл `src/index.html` и вставляем в _список тегов link_ в самый конец.
+Открываем в проекте файл `src/index.html` и вставляем в _список тегов link_ в самое начало.
 
 Далее **запускаем сервер**:  
 `ng serve`  
