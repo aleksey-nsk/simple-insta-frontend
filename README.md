@@ -220,7 +220,7 @@ your `<head>` before all other stylesheets to load our CSS"_:
 Сделаем авторизацию пользователя. Нам понадобится **сервис TokenStorageService**.
 Сохранять токен будем в браузере.
 
-Сервис AuthInterceptorService - это именно тот сервис, который каждый раз
+**Сервис AuthInterceptorService** - это именно тот сервис, который каждый раз
 будет подставлять токен в запросы.
 
 10. Далее сервис с **нотификациями**: NotificationService
